@@ -142,7 +142,13 @@ class Bomb:
 
 
 class Score:
+    """
+    スコア表示に関するクラス
+    """
     def __init__(self):
+        """
+        文字列Surfaceを生成する
+        """
         self.fonto = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30)
         self.color = ((0, 0, 255))
         self.score = 0
@@ -151,6 +157,10 @@ class Score:
         self.img_rect.center= 100, 600
 
     def update(self, screen: pg.Surface):
+        """
+        現在のスコアを表示させる文字列Surfaceを生成
+        引数 screen：画面Surface
+        """
         self.img = self.fonto.render(f"スコア：{self.score}", 0, self.color)
         screen.blit(self.img, self.img_rect)
         
